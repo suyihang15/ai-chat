@@ -133,7 +133,6 @@
 
 ### 消息路由
 
-```
 sidepanel.js → chrome.runtime.sendMessage()
     → service-worker.js (消息路由)
        
