@@ -136,7 +136,6 @@
 sidepanel.js → chrome.runtime.sendMessage()
     → service-worker.js (消息路由)
        
----js
 
 ---
 
@@ -149,7 +148,8 @@ sidepanel.js → chrome.runtime.sendMessage()
 ---
 
 ## 👤 效果展示     
-<img width="283" height="669" alt="屏幕截图 2026-06-14 211930" src="https://github.com/user-attachments/assets/9fc67bd9-6e59-4412-8309-005ce6e83020" />
+<img width="344" height="764" alt="屏幕截图 2026-06-14 212153" src="https://github.com/user-attachments/assets/60519952-7d24-4c16-b2b9-98e9ba324d2d" />
+
 
 
 ## 📄 License
