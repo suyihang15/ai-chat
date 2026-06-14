@@ -137,7 +137,7 @@
 sidepanel.js → chrome.runtime.sendMessage()
     → service-worker.js (消息路由)
        
-
+---
 ---
 
 ## ⚠️ 安全说明
