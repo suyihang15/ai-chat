@@ -21,17 +21,7 @@
 - `Ctrl+Enter` 发送，`Esc` 停止生成
 
 
-### ⚡ 浏览器自动化
-直接在聊天框输入指令即可操控网页：
 
-| 指令 | 功能 | 示例 |
-|------|------|------|
-| `click("selector")` | 点击元素 | `click("button.submit")` |
-| `fill("selector", "value")` | 填写表单 | `fill("#email", "hello@example.com")` |
-| `scroll("selector")` | 滚动到元素 | `scroll("#footer")` |
-| `extract("selector")` | 批量提取内容 | `extract(".product-card")` |
-| `highlight("selector")` | 高亮元素 | `highlight("a")` |
-| `get("selector")` | 查看元素详情 | `get("#main")` |
 
 ### 🎨 其他亮点
 - API 连接测试功能
