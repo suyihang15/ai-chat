@@ -136,9 +136,7 @@
 ```
 sidepanel.js → chrome.runtime.sendMessage()
     → service-worker.js (消息路由)
-        → content.js (页面分析/自动化)
-        → element-picker.js (元素选择)
-```
+       
 
 ---
 
