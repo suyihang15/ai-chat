@@ -138,6 +138,7 @@ sidepanel.js → chrome.runtime.sendMessage()
     → service-worker.js (消息路由)
        
 ---
+
 ---
 
 ## ⚠️ 安全说明
@@ -147,6 +148,10 @@ sidepanel.js → chrome.runtime.sendMessage()
 - 仅在用户配置的 API 端点发送请求
 
 ---
+
+## 👤 效果展示     
+<img width="283" height="669" alt="屏幕截图 2026-06-14 211930" src="https://github.com/user-attachments/assets/9fc67bd9-6e59-4412-8309-005ce6e83020" />
+
 
 ## 📄 License
 
