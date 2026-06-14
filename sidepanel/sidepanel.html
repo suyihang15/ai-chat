@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI 智能对话助手</title>
+  <link rel="stylesheet" href="sidepanel.css">
+</head>
+<body>
+  <!-- Header -->
+  <header id="toolbar">
+    <h1 class="app-title">💬 AI 对话</h1>
+    <div class="toolbar-right">
+      <button id="btn-new-chat" class="icon-btn" title="新建对话">➕</button>
+      <button id="btn-settings" class="icon-btn" title="设置 API">⚙️</button>
+    </div>
+  </header>
+
+  <!-- Quick Actions -->
+  <nav id="quick-actions">
+  </nav>
+
+  <!-- Chat Area -->
+  <main id="chat-container">
+    <div id="chat-messages">
+      <div class="message system-message welcome">
+        <div class="message-content">
+          <h2>👋 AI 智能对话助手</h2>
+          <p style="font-size:11px;color:var(--text-muted);margin-top:2px;">支持 DeepSeek · OpenAI · Claude · Gemini</p>
+          <ul>
+            <li>💬 <strong>智能对话</strong> — 支持多家 AI 厂商 API，随意切换</li>
+          </ul>
+          <p class="hint">⚙️ 请先配置 API（点击右上角齿轮）</p>
+        </div>
+      </div>
+    </div>
+    <div id="typing-indicator" class="typing-indicator hidden">
+      <span></span><span></span><span></span>
+    </div>
+  </main>
+
+  <!-- Input Area -->
+  <footer id="input-area">
+    <div class="input-wrapper">
+      <textarea id="chat-input" placeholder="输入消息... (Ctrl+Enter 发送)" rows="1"></textarea>
+      <button id="btn-send" class="send-btn" title="发送">➤</button>
+      <button id="btn-stop" class="stop-btn hidden" title="停止">⏹</button>
+    </div>
+    <div class="input-footer">
+      <span id="model-badge" class="badge">未配置</span>
+      <span id="status-dot" class="dot disconnected"></span>
+    </div>
+  </footer>
+
+  <!-- Settings Flyout -->
+  <div id="settings-flyout" class="flyout hidden">
+    <div class="flyout-header">
+      <h3>⚙️ API 设置</h3>
+      <button id="btn-flyout-close" class="icon-btn">✕</button>
+    </div>
+    <div class="flyout-body">
+      <!-- Provider Selector -->
+      <div class="form-group">
+        <label>服务商</label>
+        <div id="provider-selector" class="provider-selector">
+          <button class="provider-chip" data-provider="deepseek">🧠 DeepSeek</button>
+          <button class="provider-chip" data-provider="openai">🤖 OpenAI</button>
+          <button class="provider-chip" data-provider="anthropic">🧪 Claude</button>
+          <button class="provider-chip" data-provider="google">💎 Gemini</button>
+          <button class="provider-chip" data-provider="custom">🔧 自定义</button>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label id="flyout-key-label">API Key</label>
+        <div class="input-with-toggle">
+          <input type="password" id="flyout-apikey" placeholder="输入 API Key...">
+          <button id="btn-toggle-key" class="toggle-vis-btn" title="显示/隐藏">👁</button>
+        </div>
+        <span class="hint"><a id="flyout-key-url" href="#" target="_blank">获取 API Key →</a></span>
+      </div>
+
+      <div class="form-group">
+        <label>Base URL</label>
+        <input type="text" id="flyout-baseurl" placeholder="https://api.xxx.com">
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>模型</label>
+          <input type="text" id="flyout-model" list="flyout-model-list" placeholder="输入模型名">
+          <datalist id="flyout-model-list"></datalist>
+        </div>
+        <div class="form-group">
+          <label>Temperature <span style="font-size:10px;color:var(--text3);" id="flyout-temp-val">0.7</span></label>
+          <input type="range" id="flyout-temp" min="0" max="2" step="0.1" value="0.7">
+        </div>
+      </div>
+
+      <div class="form-actions">
+        <button id="btn-flyout-save" class="primary-btn">💾 保存设置</button>
+        <button id="btn-flyout-test" class="secondary-btn">🔌 测试连接</button>
+      </div>
+      <div id="flyout-status"></div>
+    </div>
+  </div>
+  <div id="flyout-overlay" class="overlay hidden"></div>
+
+  <!-- Libs -->
+  <script src="../lib/purify.min.js"></script>
+  <script type="module">
+    import { marked } from '../lib/marked.esm.js';
+    window.marked = marked;
+  </script>
+  <script src="../shared/storage-manager.js" defer></script>
+  <script src="../shared/api-client.js" defer></script>
+  <script src="sidepanel.js" defer></script>
+</body>
+</html>
